@@ -36,8 +36,8 @@ public class CustomerController {
                         .orElseThrow(IllegalArgumentException::new);
     }
     
-    @GetMapping("/{id}/orders")
-    public Object getOrdersForCustomer(@PathVariable int id) {
-        return orderClient.getOrdersForCustomer(id);
+    @GetMapping("/{customerId}/orders")
+    public Object getOrdersForCustomer(@PathVariable int customerId) {
+        return orderClient.getOrdersForCustomer(customerId);
     }
 }

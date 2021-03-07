@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "order-service", decode404=true, fallback = OrderClientFallback.class)
 public interface OrderClient {
 	
-	@GetMapping("/")
-    Object getOrdersForCustomer(@RequestParam("id") int customerId);
+    @GetMapping("/")
+    Object getOrdersForCustomer(@RequestParam("customerId") int customerId);
 
 }
