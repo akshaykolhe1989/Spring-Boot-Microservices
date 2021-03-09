@@ -1,11 +1,11 @@
-package com.example.gatewayservice;
+package com.example.configservice;
 
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GatewayServiceApplicationTests {
+class ConfigServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

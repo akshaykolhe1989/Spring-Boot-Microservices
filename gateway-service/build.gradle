@@ -1,8 +1,8 @@
 plugins {
-	//id 'org.springframework.boot' version '2.2.0.RELEASE'
-	//id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'org.springframework.boot' version '2.1.4.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+   // id 'org.springframework.boot' version '2.2.0.RELEASE'
+   // id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 }
 
@@ -12,21 +12,19 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
-	maven { url 'https://repo.spring.io/milestone' }
 }
 
 ext {
-	//set('springCloudVersion', "2020.0.0")
-	//set('springCloudVersion', "Hoxton.RC1")
+	//set('springCloudVersion', "2020.0.1")
 	set('springCloudVersion', "Greenwich.RELEASE")
 }
 
 dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+	//implementation 'org.springframework.cloud:spring-cloud-starter-config:2.0.1.RELEASE'
+	implementation 'org.springframework.cloud:spring-cloud-starter-config:2.1.0.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {
