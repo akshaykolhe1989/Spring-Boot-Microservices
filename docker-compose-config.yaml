@@ -1,0 +1,8 @@
+version: '3'
+services:
+  
+  config-service:
+    build: ./config-service
+    ports:
+      - "4999:4999"
+

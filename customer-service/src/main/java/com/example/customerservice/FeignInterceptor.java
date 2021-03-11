@@ -1,8 +1,10 @@
 package com.example.customerservice;
 
-import org.apache.http.entity.ContentType;
+
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import feign.form.ContentType;
+
 
 
 public class FeignInterceptor implements RequestInterceptor {
@@ -12,7 +14,7 @@ public class FeignInterceptor implements RequestInterceptor {
 		// TODO Auto-generated method stub
 		template.header("user", "Akshay");
 		template.header("password", "PASS");
-		template.header("Accept", ContentType.APPLICATION_JSON.getMimeType());
+		template.header("Accept", "application/json");
 
 	}
 

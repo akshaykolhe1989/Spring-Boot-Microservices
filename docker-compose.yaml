@@ -1,0 +1,52 @@
+version: '3'
+services:
+  
+#  config-service:
+#    build: ./config-service
+#    ports:
+#      - "4999:4999"
+#    networks:
+#      - microservice-net  
+  
+#  discovery-service:
+#    build: ./discovery-service
+#    ports:
+#      - "5000:5000"
+#    healthcheck:
+#      test: "exit 0"  
+#    links:  
+#      - "config-service"  
+#    depends_on:
+#      - config-service
+#    networks:
+#      - microservice-net  
+  
+  customer-service:
+    build: ./customer-service
+    ports:
+      - "5001:5001"
+#    restart: on-failure:5
+#    depends_on:
+      #- config-service
+      #- discovery-service:
+
+  
+  order-service:
+    build: ./order-service
+    ports:
+      - "5002:5002"
+#    depends_on:
+#      - config-service
+#      - discovery-service
+  
+  gateway-service:
+    build: ./gateway-service
+    ports:
+      - "5003:5003"
+#    depends_on:
+#      - config-service
+#      - discovery-service
+
+#networks:
+#  microservice-net:
+#    driver: bridge
