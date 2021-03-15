@@ -1,4 +1,4 @@
-package com.example.orderservice;
+package com.example.paymentservice;
 
 import org.springframework.core.env.Environment;
 
@@ -9,13 +9,7 @@ public class ResponseWrapper<T> {
 	public ResponseWrapper(Environment environment, T data) {
 		super();
 		String port = environment!=null ? environment.getProperty("server.port"):"";
-		
-		System.out.println("******************"+port);
-		
 		this.port = port.isEmpty()? null:Integer.parseInt(port);
-		
-		System.out.println("******************"+port);
-		
 		this.data = data;
 	}
 	public int getPort() {
