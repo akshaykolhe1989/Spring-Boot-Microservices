@@ -1,0 +1,53 @@
+plugins {
+	//id 'org.springframework.boot' version '2.4.3'
+	//id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.springframework.boot' version '2.2.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	//set('springCloudVersion', "2020.0.1")
+	set('springCloudVersion', "Greenwich.RELEASE")
+}
+
+configurations.all {
+   // exclude group: 'ch.qos.logback', module:'logback-classic'
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-config:2.1.0.RELEASE'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+	
+	
+	//implementation 'org.apache.logging.log4j:log4j-api:2.7'
+	//implementation 'org.apache.logging.log4j:log4j-core:2.7'
+	//implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.7'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'mysql:mysql-connector-java'
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.amqp:spring-rabbit-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
