@@ -1,7 +1,5 @@
 # Current structure of files in project azure directory
-
-$ tree
-.
+```
 ├── aks
 │   └── manifests
 │       ├── deployment.yaml
@@ -16,7 +14,7 @@ $ tree
     ├── main.tf
     ├── terraform.tfstate
     └── terraform.tfstate.backup
-
+```
 
 Here all the all the terraform files are kept under azure/terraform directory
 

@@ -30,6 +30,9 @@ hs_err_pid*
 *.tfstate
 *.tfstate.*
 
+# .terraform lock hcl file
+*.terraform.lock.hcl
+
 # Crash log files
 crash.log
 crash.*.log
